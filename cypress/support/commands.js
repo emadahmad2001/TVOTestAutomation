@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('navigateToLearningResources', () => {
+    cy.get('.site-nav--has-dropdown').contains('Learning Resources (K-12)').click();
+  });
+  
+  Cypress.Commands.add('chooseGradeLevel', (gradeLevel) => {
+    cy.get('.site-nav--has-dropdown').contains('Learning Resources (K-12)').click();
+    cy.contains('.dropdown-menu', 'Grade ' + gradeLevel).click();
+  });
