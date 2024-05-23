@@ -24,6 +24,20 @@ The test approach involves automating the navigation to the Learning Resources s
 4. All subject cards are visible and clickable.
 5. The website does not undergo significant changes during the testing period.
 
+## Files
+
+### `commands.js`
+
+This file contains custom Cypress commands that are used across multiple test cases. These commands encapsulate reusable actions to interact with elements on the webpage, making test code more readable and maintainable.
+
+### `learningResources.cy.js`
+
+This file contains tests related to learning resources functionality on the TVO Learn website. It includes test cases to navigate to learning resources, choose a grade level, scroll to the "Learn Forward in the Curriculum" section, click on subject cards, and validate functionality on the subject page.
+
+### `TVO_learn_tests.js`
+
+This file contains a suite of tests covering various aspects of the TVO Learn website. It includes tests for visiting the homepage, navigating learning resources dropdown, choosing a grade level, scrolling to the "Learn Forward in the Curriculum" section, clicking on subject cards, validating subject page URL and content, and testing grade level display and subject card visibility and clickability.
+
 ## Summary
 
 The test automation suite covers essential functionalities of the TVO Learn website, including navigation, grade level selection, and subject page validation. Test cases focus on ensuring the correctness of page URLs, displaying grade levels, and the visibility and clickability of subject cards. Execution results are expected to confirm the successful navigation and validation of each test case.
