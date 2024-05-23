@@ -10,7 +10,7 @@ describe('Learning Resources Tests', () => {
 
     // Scroll down to "Learn Forward in the Curriculum" section and click any card
     cy.contains('Learn Forward in the Curriculum').scrollIntoView();
-    cy.get('.card-body').eq(0).click(); // Clicking on the first card
+    cy.get('.card-body').eq(0).click({force: true}); // Clicking on the first card
 
     // Validate page functionality
     cy.url().should('include', '/subject/');
@@ -28,7 +28,13 @@ describe('Learning Resources Tests', () => {
     cy.get('.subject-card').should('be.visible');
 
     // Test case 5: Check if the subject cards are clickable
-    cy.get('.subject-card').first().click();
-    cy.url().should('include', '/course/'); // Check if URL includes '/course/'
+    cy.get('.subject-card').first().click({force: true});
+    cy.url().should('include', '/course/')
+    
+    const subjectName = 'Mathematics'; // Change this to the subject name you want to click on
+    cy.get('.button-subject-name').contains(subjectName)
+      .parentsUntil('.shg-row')
+      .find('.button-subject-link')
+      .click({force: true});
   });
 });

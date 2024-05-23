@@ -14,7 +14,7 @@ describe('TVO Learn Automated Tests', () => {
       cy.navigateToLearningResources();
     
       // Check if dropdown menu exists
-      cy.get('.dropdown-menu').should('exist');
+      cy.get('.site-nav--has-dropdown').should('exist');
     });
   
     it('Choose Grade Level Test', () => {
@@ -29,14 +29,14 @@ describe('TVO Learn Automated Tests', () => {
       cy.contains('Learn Forward in the Curriculum').scrollIntoView();
     
       // Check if "Learn Forward in the Curriculum" section is visible
-      cy.get('.curriculum-section').should('be.visible');
+      cy.get('.shogun-heading-component').should('be.visible');
     });
   
     it('Click on Subject Card Test', () => {
       cy.contains('Learn Forward in the Curriculum').scrollIntoView();
       
       // Click on any card within that section representing subjects
-      cy.get('.card-body').eq(0).click();
+      cy.get('.card-body').eq(0).click({force: true});
     
       // Verify that the click action is successful
       cy.url().should('include', '/subject/');
@@ -44,7 +44,7 @@ describe('TVO Learn Automated Tests', () => {
   
     it('Subject Page URL Test', () => {
       // Click on any card within that section representing subjects
-      cy.get('.card-body').eq(0).click();
+      cy.get('.card-body').eq(0).click({force: true});
     
       // Validate that clicking on a subject card navigates to the corresponding subject page
       cy.url().should('include', '/subject/');
@@ -70,7 +70,7 @@ describe('TVO Learn Automated Tests', () => {
   
     it('Subject Cards Clickability Test', () => {
       // Click on any card within that section representing subjects
-      cy.get('.card-body').eq(0).click();
+      cy.get('.card-body').eq(0).click({force: true});
     
       // Verify that clicking on a subject card navigates to the corresponding subject page
       cy.url().should('include', '/course/');

@@ -26,9 +26,9 @@
 
 Cypress.Commands.add('navigateToLearningResources', () => {
     cy.get('.site-nav--has-dropdown').contains('Learning Resources (K-12)').click({force: true});
-  });
+});
   
-  Cypress.Commands.add('chooseGradeLevel', (gradeLevel) => {
+Cypress.Commands.add('chooseGradeLevel', (gradeLevel) => {
     cy.get('.site-nav--has-dropdown').contains('Learning Resources (K-12)').click({force: true});
     cy.contains('.site-nav__label', 'Grade ' + gradeLevel).click({force: true});
-  });
+});
